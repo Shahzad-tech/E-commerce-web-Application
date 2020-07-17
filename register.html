@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="register.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -35,19 +35,19 @@
                     <div class = "form-group ">
                         <label for="password" class = "font-weight-light text-muted">Password</label>
                         <div class="input-group ">
-                            <input type="password" id = "password" class="form-control" placeholder="Enter your Password" required>
+                            <input type="password" id = "password" class="form-control" placeholder="Enter your Password">
                             <div class="input-group-append">
-                                <div class="input-group-text"><i class="fa fa-eye" id = "eye" onclick="show()"></i></div>
+                                <div class="input-group-text"><i class="fa fa-eye" id = "eye"></i></div>
                             </div>
                         </div>
                     </div>
                     <div class = "form-group">
                         <label for="userid" class = "font-weight-light text-muted">Id</label>
-                        <input type="text" id = "Userid" class="form-control" placeholder="Enter your Id" required>
+                        <input type="text" id = "Userid" class="form-control" placeholder="Enter your Id" >
                     </div>
                     <div class = "form-group">
                         <label for="usercity" class = "font-weight-light text-muted">City</label>
-                        <select type="text" id = "Usercity" class="form-control" required>
+                        <select type="text" id = "Usercity" class="form-control">
                             <option selected value="">Select City</option>
                             <option value="Islamabad">Islamabad</option>
                             <option value="Karachi">Karachi</option>
@@ -58,11 +58,11 @@
                     </div>
                     <div class = "form-group">
                         <label for="Address" class = "font-weight-light text-muted">Address</label>
-                        <textarea  id = "Address" class="form-control" rows = "5" placeholder="Enter your Address" required></textarea>
+                        <textarea  id = "Address" class="form-control" rows = "5" placeholder="Enter your Address"></textarea>
                     </div>
                     
                     <div class="float-left">
-                    <button type="button"  Value= "submit" id="submit" onclick="registerValidate()" class="btn btn-info mt-2 mb-4">Register</button>
+                    <button type="submit"  class="btn btn-info mt-2 mb-4">Register</button>
                     </div>
 
                 </form>
@@ -96,10 +96,9 @@
             </div>
         </div>
         </div>
-       
-</body>
 
-      
+<script src="register.js"></script> 
+</body>     
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </html>

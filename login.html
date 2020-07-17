@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src = "loginjavascript.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
@@ -45,7 +44,7 @@
                         <div class="row align-middle">
                             <div class="col-md-9 col-lg-8 mx-auto">
                                 <h1 class="mb-4 font-weight-light text-info">Login Here</h1>
-                                <form class="mt-5" action="index.html" target= "_blank" onsubmit="return validate();">
+                                <form class="mt-5" action="index.html" target= "_blank" id ="loginForm">
                                     <div class="form-label-group border-radius">
                                         <input type="text" id = "logname"class="form-control" placeholder="Enter User Name" autofocus >
                                         <label for="logname" style="color:transparent">User Name</label>
@@ -70,6 +69,7 @@
         </div>
     </div>
 </body>
+<script src = "loginjavascript.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </html>

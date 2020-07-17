@@ -1,5 +1,3 @@
-// const form = document.getElementById("registerForm");
-
 const Regusername = /^[a-z]{5,15}$/i;
 const passwordReg = /^[0-9a-z@-]{6,15}$/i; //alpha numeric character alog with some special character.
 const Reguserid = /^[0-9]{5}$/;
@@ -11,6 +9,7 @@ var usercity;
 var address;
 
 
+document.getElementById("eye").addEventListener("click" , show);   
 
 function show(){
     
@@ -28,17 +27,15 @@ function show(){
 
 }
 
+document.getElementById("registerForm").addEventListener('submit', (e) => {
 
-
-function registerValidate(){
-    
         
      username = document.getElementById("username").value;
      password = document.getElementById("password").value;
      userid = document.getElementById("Userid").value;
      usercity = document.getElementById("Usercity").value;
      address = document.getElementById("Address").value;
-    
+
   
     if (username == ""){
 
@@ -49,8 +46,9 @@ function registerValidate(){
             type: "error",
             confirmButtonText: "Ok",
         });
-
+        e.preventDefault();
         return false;
+        
     }
 
     else if(!(Regusername.test(username))){
@@ -63,6 +61,8 @@ function registerValidate(){
                         confirmButtonText: "Ok",
                     });
                     
+        
+                    e.preventDefault();
                     return false;
 
     }
@@ -76,7 +76,9 @@ function registerValidate(){
             type: "error",
             confirmButtonText: "Ok"
             });
-        return false;
+        
+            e.preventDefault();
+            return false;
     
     }
     
@@ -90,7 +92,9 @@ function registerValidate(){
                         confirmButtonText: "Ok",
                     });
                     
-        return false;
+        
+                    e.preventDefault();
+                    return false;
 
     }
 
@@ -103,7 +107,10 @@ function registerValidate(){
             type: "error",
             confirmButtonText: "Ok"
             });
-        return false;
+        
+        
+            e.preventDefault();
+            return false;
     }
 
     else if(!(Reguserid.test(userid))){
@@ -116,6 +123,8 @@ function registerValidate(){
                         confirmButtonText: "Ok",
                     });
                     
+                   
+                    e.preventDefault();
                     return false;
 
     }
@@ -129,7 +138,10 @@ function registerValidate(){
             type: "error",
             confirmButtonText: "Ok"
             });
-        return false;
+       
+            
+            e.preventDefault();
+            return false;
     }
 
     else if(address==""){
@@ -142,11 +154,19 @@ function registerValidate(){
             confirmButtonText: "Ok"
             });
        
-        return false;
+       
+            e.preventDefault();
+            return false;
     }
 
     else{
-       
+
+        // username  ="";
+        // password ="";
+        // userid   ="";
+        // usercity ="";
+        // address  ="";
+
         swal({
             title:"Submitted",   
             text:"Your form has been successfully submitted",
@@ -154,7 +174,10 @@ function registerValidate(){
             type: "error",
             confirmButtonText: "Ok"
             });
-        return false;
+       
+            e.preventDefault();
+
+            return true;
     }
 
-}
+});

@@ -1,4 +1,3 @@
-
 const Regusername = /^[a-z]{5,15}$/i;
 var username;
 var password;
@@ -13,7 +12,8 @@ function myTimer(){
 
 }
 
-function validate(){
+document.getElementById("loginForm").addEventListener('submit' , (e)=>{
+
 
     username = document.getElementById("logname").value;
     password = document.getElementById("logpassword").value;
@@ -28,6 +28,7 @@ function validate(){
             confirmButtonText: "Ok",
         });
 
+        e.preventDefault();
         return false;
     }
     
@@ -42,7 +43,8 @@ function validate(){
                         confirmButtonText: "Ok",
                     });
                     
-        return false;
+                    e.preventDefault();
+                    return false;
 
     }
     
@@ -56,8 +58,14 @@ function validate(){
             confirmButtonText: "Ok",
         });
 
+        e.preventDefault();
         return false;
     }
+
+    else{
+
+        // view = 1;
+        localStorage.setItem("homeView",1);
 
     swal({
         title:"Login Successfully",   
@@ -69,5 +77,6 @@ function validate(){
 
     return true;
 
-
 }
+
+});
