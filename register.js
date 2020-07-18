@@ -181,3 +181,27 @@ document.getElementById("registerForm").addEventListener('submit', (e) => {
     }
 
 });
+
+
+// $(document).ready(function(){
+    
+//     $("#eye").on('click', show);
+    
+    
+//     function show(){
+    
+//         $("#eye").toggleClass('fa-eye-slash');
+        
+//         password = $("#password");
+        
+//         if(("password").type==="password"){
+//                 $("#password").attr("type","text");
+//                 }
+//         else{
+//                 $("#password").attr("type","password");
+//                 }   
+    
+//     }
+
+
+// });

@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <!-- <style>
   div,p{
@@ -59,32 +60,48 @@
                 Cart
             </h2>
                 <hr>
+                <div class="DataOrder">
                     <h5 class="font-weight-light text-muted">Karahi</h5>
-                        <p>2
-                            <button class="btn btn-info text-light offset-1">+</button>
-                            <button class="btn btn-info text-light">-</button>
-                            <button class="btn btn-dark text-light">Delete</button>
-                            <span class="float-right text-muted">300Rs</span>
-                        </p>
-                <hr>
+                        <p id="para1">
+                          <span id="volume">1</span>
+                            <button class="btn btn-info text-light offset-1" id="plus">+</button>
+                            <button class="btn btn-info text-light" id="minus">-</button>
+                            <button class="btn btn-dark text-light" id="delete">Delete</button>
+                            <span class="float-right text-muted" id="amount">300Rs</span>
+                        
+                            <hr>
+                          </p>
+
+                </div>
+
+                <div class="DataOrder">
                     <h5 class="font-weight-light text-muted">Chinese</h5>
-                        <p>1
-                            <button class="btn btn-info text-light offset-1">+</button>
-                            <button class="btn btn-info text-light">-</button>
-                            <button class="btn btn-dark text-light">Delete</button>
-                            <span class="float-right text-muted">300Rs</span>
-                        </p>
-                <hr>
+                        <p id="para2">
+                          <span id="volume">1</span>
+                            <button class="btn btn-info text-light offset-1" id="plus">+</button>
+                            <button class="btn btn-info text-light" id="minus">-</button>
+                            <button class="btn btn-dark text-light" id="delete">Delete</button>
+                            <span class="float-right text-muted" id="amount">300Rs</span>
+                            
+                            <hr>
+                          </p>
+
+                </div>
+                <div class="DataOrder">
                     <h5 class="font-weight-light text-muted">Tikka</h5>
-                        <p >1
-                            <button class="btn btn-info text-light offset-1">+</button>
-                            <button class="btn btn-info text-light">-</button>
-                            <button class="btn btn-dark text-light">Delete</button>
-                            <span class="float-right text-muted">300Rs</span>
-                        </p>
-                <hr>
+                        <p id="para3">
+                          <span id="volume">1</span>
+                            <button class="btn btn-info text-light offset-1"id="plus" >+</button>
+                            <button class="btn btn-info text-light" id="minus">-</button>
+                            <button class="btn btn-dark text-light"id="delete">Delete</button>
+                            <span class="float-right text-muted" id="amount">300Rs</span>
+                            
+                            <hr>
+                          </p>
+                
+                      </div>
                 <p class="float-right text-muted text-right">
-                  Total (<span>4</span>) items <br> <span class="text-warning">1200rs</span><br>
+                  Total (<span id="totalVolume">3</span>) items <br> <span class="text-warning" id="totalAmount">900rs</span><br>
                   <a class="btn btn-danger mt-3" href="Checkout.html">Proceed to Checkout</a>
                 </p>
 
@@ -109,7 +126,7 @@
           </div>     
       </div>
     </div>
-
+<script src="myorderjavascript.js"></script>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
