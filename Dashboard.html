@@ -8,6 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!--for chart-->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <!-- <style>
     div{
@@ -93,33 +95,34 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </h3>
-                <hr>
                 <p class="text-muted">You have been logged in <span>1</span> time.</p>
+                <hr>
                 <h3 class="text-info font-weight-light mt-1">
                     Money Spent
                 </h3>
-                <hr>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" style="width:70%">(There will be a js chart)</div>
+                <div class="chart">
+                    <canvas id="myChart"></canvas>
                 </div>
-                <br>
+                <hr>
+                <!-- <br> -->
                 <h3 class="text-info font-weight-light">
                     Liked Items
                 </h3>
-                <hr>
+                <!-- <hr> -->
                 <div class="row">
-                    <div class="col-8 col-md-5 offset-3">
+                    <div class="col-12 col-sm-12 col-md-8 offset-md-1 mt-3">
                         <ul class="list-group">
-                            <li class="list-group-item">Karahi<button class="btn btn-info float-right">Remove</button></li>
-                            <li class="list-group-item">Chicken tikka<button class="btn btn-info offset-3 float-right">Remove</button></li>
-                            <li class="list-group-item">Beef Biryani<button class="btn btn-info offset-3 float-right">Remove</button></li>
+                            <li class="list-group-item"><span >Karahi</span><button class="btn btn-info float-right ">Remove</button> <button class="btn btn-danger float-right mr-sm-3">Add to Cart</button></li>
+                            <li class="list-group-item"><span >Chicken tikka</span><button class="btn btn-info float-right ">Remove</button> <button class="btn btn-danger float-right mr-sm-3">Add to Cart</button></li>
+                            <li class="list-group-item"><span >Beef Biryani</span><button class="btn btn-info float-right ">Remove</button> <button class="btn btn-danger float-right mr-sm-3">Add to Cart</button></li>
                         </ul>
                     </div>
                 </div>
+                <br>
+                <hr>
             </div>
+
         </div>
-        <br>
-         <hr>
         
             <div class="row text-muted text-center bg-light mt-5">
                 <div class="col-4 offset-4 text-muted text-center mt-2">
@@ -139,6 +142,7 @@
             </div>
     </div>
 
+<script src = "DashboardJavaScript.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
