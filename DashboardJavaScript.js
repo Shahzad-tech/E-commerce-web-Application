@@ -3,7 +3,7 @@ $(document).ready(function(){
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Login1', 'Login2', 'Login3', 'Login4', 'Login5', 'Login6'],// login details
+            labels: ['Login1', 'Login2', 'Login3', 'Login4', 'Login5', 'Login6'],// login details chart.js
             datasets: [{
                 label: 'Money Spent',
                 data: [300, 600, 900, 200, 450, 560],//Data

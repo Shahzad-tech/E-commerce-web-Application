@@ -9,199 +9,163 @@ var usercity;
 var address;
 
 
-document.getElementById("eye").addEventListener("click" , show);   
+$("#registerForm").submit(function(e){
 
-function show(){
-    
-    document.getElementById("eye").classList.toggle('fa-eye-slash');
-    
-    password = document.getElementById("password");
+     username = $("#username").val();
+     password = $("#password").val();
+     userid =   $("#Userid").val();
+     usercity = $("#Usercity").val();
+     address =  $("#Address").val();
 
 
-    if(password.type==="password"){
-                password.type = "text";
+     if (username == ""){
+
+                swal({
+                    title:"Error",   
+                    text:"Enter the User Name",
+                    icon:"warning",
+                    type: "error",
+                    confirmButtonText: "Ok",
+                });
+                
+                e.preventDefault();
+               
+                
             }
-    else{
-                password.type = "password";
-            }   
-
-}
-
-document.getElementById("registerForm").addEventListener('submit', (e) => {
-
         
-     username = document.getElementById("username").value;
-     password = document.getElementById("password").value;
-     userid = document.getElementById("Userid").value;
-     usercity = document.getElementById("Usercity").value;
-     address = document.getElementById("Address").value;
-
-  
-    if (username == ""){
-
-        swal({
-            title:"Error",   
-            text:"Enter the User Name",
-            icon:"warning",
-            type: "error",
-            confirmButtonText: "Ok",
-        });
-        e.preventDefault();
-        return false;
-        
-    }
-
-    else if(!(Regusername.test(username))){
-        
-        swal({
-                        title:"Error",   
-                        text:"Name should be between 5 and 15 characters and contains Alphabets only",
-                        icon:"warning",
-                        type: "error",
-                        confirmButtonText: "Ok",
-                    });
-                    
-        
-                    e.preventDefault();
-                    return false;
-
-    }
-
-    else if(password == ""){
-        
-        swal({
-            title:"Error",   
-            text:"Enter the password",
-            icon:"warning",
-            type: "error",
-            confirmButtonText: "Ok"
-            });
-        
-            e.preventDefault();
-            return false;
-    
-    }
-    
-    else if(!(passwordReg.test(password))){
-        
-        swal({
-                        title:"Error",   
-                        text:"Password could be all numeric or string. @ , - can also be used. should have 6 to 15 characters",
-                        icon:"warning",
-                        type: "error",
-                        confirmButtonText: "Ok",
-                    });
-                    
-        
-                    e.preventDefault();
-                    return false;
-
-    }
-
-    else if(userid==""){
-       
-        swal({
-            title:"Error",   
-            text:"Enter the your id",
-            icon:"warning",
-            type: "error",
-            confirmButtonText: "Ok"
-            });
-        
-        
-            e.preventDefault();
-            return false;
-    }
-
-    else if(!(Reguserid.test(userid))){
-        
-        swal({
-                        title:"Error",   
-                        text:"User Id should contain only numbers upto 5",
-                        icon:"warning",
-                        type: "error",
-                        confirmButtonText: "Ok",
-                    });
-                    
-                   
-                    e.preventDefault();
-                    return false;
-
-    }
-
-    else if(usercity==""){
-        
-        swal({
-            title:"Error",   
-            text:"Select your city",
-            icon:"warning",
-            type: "error",
-            confirmButtonText: "Ok"
-            });
-       
+        else if(!(Regusername.test(username))){
+            
+            swal({
+                            title:"Error",   
+                            text:"Name should be between 5 and 15 characters and contains Alphabets only",
+                            icon:"warning",
+                            type: "error",
+                            confirmButtonText: "Ok",
+                        });
+                        
             
             e.preventDefault();
-            return false;
-    }
-
-    else if(address==""){
-        
-        swal({
-            title:"Error",   
-            text:"Enter your Address",
-            icon:"warning",
-            type: "error",
-            confirmButtonText: "Ok"
-            });
-       
-       
+           
+    
+        }
+    
+        else if(password == ""){
+            
+            swal({
+                title:"Error",   
+                text:"Enter the password",
+                icon:"warning",
+                type: "error",
+                confirmButtonText: "Ok"
+                });
+            
             e.preventDefault();
-            return false;
-    }
+            
+        
+        }
+        
+        else if(!(passwordReg.test(password))){
+            
+            swal({
+                            title:"Error",   
+                            text:"Password could be alpha numeric. @ , - can also be used. should have 6 to 15 characters",
+                            icon:"warning",
+                            type: "error",
+                            confirmButtonText: "Ok",
+                        });
+                        
+            
+            e.preventDefault();
+            
+    
+        }
+    
+        else if(userid==""){
+            
+            swal({
+                title:"Error",   
+                text:"Enter the your id",
+                icon:"warning",
+                type: "error",
+                confirmButtonText: "Ok"
+                });
+            
+            
+            e.preventDefault();
+           
+        }
+    
+        else if(!(Reguserid.test(userid))){
+            
+            swal({
+                            title:"Error",   
+                            text:"User Id should contain only numbers upto 5",
+                            icon:"warning",
+                            type: "error",
+                            confirmButtonText: "Ok",
+                        });
+                        
+                        
+            e.preventDefault();
+           
+    
+        }
+    
+        else if(usercity==""){
+            
+            swal({
+                title:"Error",   
+                text:"Select your city",
+                icon:"warning",
+                type: "error",
+                confirmButtonText: "Ok"
+                });
+            
+                
+            e.preventDefault();
+            
+        }
+    
+        else if(address==""){
+            
+            swal({
+                title:"Error",   
+                text:"Enter your Address",
+                icon:"warning",
+                type: "error",
+                confirmButtonText: "Ok"
+                });
+            
+            
+            e.preventDefault();
+        }
+    
+        else{
+            
+            swal({
+                title:"Submitted",   
+                text:"Your form has been successfully submitted",
+                icon:"success",
+                type: "error",
+                confirmButtonText: "Ok"
+                });
+            
+                // e.preventDefault();
+    
+        }
+    
+    });
 
+document.getElementById("eye").addEventListener("click" , function(){
+
+    document.getElementById("eye").classList.toggle('fa-eye-slash');
+    password = document.getElementById("password");
+
+    if(password.type==="password"){
+            password.type = "text";
+        }
     else{
+            password.type = "password";
+        }   
 
-        // username  ="";
-        // password ="";
-        // userid   ="";
-        // usercity ="";
-        // address  ="";
-
-        swal({
-            title:"Submitted",   
-            text:"Your form has been successfully submitted",
-            icon:"success",
-            type: "error",
-            confirmButtonText: "Ok"
-            });
-       
-            e.preventDefault();
-
-            return true;
-    }
-
-});
-
-
-// $(document).ready(function(){
-    
-//     $("#eye").on('click', show);
-    
-    
-//     function show(){
-    
-//         $("#eye").toggleClass('fa-eye-slash');
-        
-//         password = $("#password");
-        
-//         if(("password").type==="password"){
-//                 $("#password").attr("type","text");
-//                 }
-//         else{
-//                 $("#password").attr("type","password");
-//                 }   
-    
-//     }
-
-
-// });
+});   

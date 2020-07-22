@@ -2,6 +2,7 @@
 var totalVolume = 3;
 var totalAmount = 900;
 
+$(document).ready(function(){
 $(document).click(function(event) {
    
    var currenId = $(event.target).attr("id");
@@ -79,5 +80,14 @@ $(document).click(function(event) {
    $("#totalAmount").text(totalAmount+"rs");
 
     
+
+});
+
+
+});
+
+$("#placeOrder").click(function(){
+    
+    swal("Order Delivered", "Our man will reach you in a while \n Shop Again!");
 
 });
