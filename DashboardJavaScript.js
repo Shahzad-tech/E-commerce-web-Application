@@ -1,3 +1,8 @@
+const username = /^[a-z]{5,15}$/i;
+const Reguserid = /^[0-9]{5}$/;
+const Regnumber = /^[0-9\s+-]{4,20}$/;
+
+
 $(document).ready(function(){
     var ctx = $('#myChart')[0].getContext('2d');
     var myChart = new Chart(ctx, {
@@ -68,5 +73,153 @@ $(document).click(function(event){
 
 
 });
+
+$("#para1").click(function (){
+
+    $("form p, #id, #para1").hide();
+    $("input").val("");
+    // $('#id').hide();
+    $("input, textarea").show();
+    $("form").append('<button type="submit" class= "btn btn-danger">Confirm Edit</button>');
+    // $("#para1").hide();   
+
+
+});
+
+$("form").submit(function(e){
+
+    var nam = $("input[name='namee']").val();
+    var number = $("input[name='number']").val();
+    var city = $("input[name='city']").val()
+    var address = $("textarea[name='address']").val();
+
+    if(nam == ""){
+        
+        swal({
+            title:"Name Error",   
+            text:"Enter the Name",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+    
+        e.preventDefault();
+        
+    }
+    
+    else if(!(username.test(nam))){
+            
+        swal({
+                        title:"Name Error",   
+                        text:"Name should be between 5 and 15 characters and contains Alphabets only",
+                        icon:"warning",
+                        type: "error",
+                        confirmButtonText: "Ok",
+                    });
+                    
+        
+        e.preventDefault();
+       
+
+    }
+
+    else if(number == ""){
+        
+        swal({
+            title:"Number Error",   
+            text:"Enter the Phone Number",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+        
+
+    }
+
+    else if(!Regnumber.test(number)){
+        
+        swal({
+            title:"Number Error",   
+            text:"Enter the Phone Number in correct order\nNumber could have +, - and white spaces.\nExamples +xx-xxx-xxxxxxxx +92 xxx xxxxxxxx or xxxxxxxxx should be between 4 to 20",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+
+        e.preventDefault();
+
+    }
+
+    else if(city == ""){
+        
+        swal({
+            title:"City Error",   
+            text:"Enter the City",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+        
+    e.preventDefault();
+
+    }
+    
+    else if(!username.test(city)){
+        
+        swal({
+            title:"City Error",   
+            text:"You can write only alphabets in between 5 to 15",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+
+      e.preventDefault();
+    
+    }
+
+    else if(address == ""){
+        
+        swal({
+            title:"City Error",   
+            text:"Enter the Address",
+            icon:"warning",
+            type: "error",
+            confirmButtonText: "Ok",
+        });
+        
+
+        e.preventDefault();
+    }
+    
+    else{
+
+    $("input, textarea").hide();
+
+    $("form #namee").text(nam);
+    $("form #number").text(number);
+    $("form #city").text(city);
+    $("form #address").text(address);
+
+    $("form p, #id").show();
+    $("#para1").show();
+    
+    // $("form button").remove();
+    // $("#para1").show();
+
+    e.preventDefault();
+
+
+
+    }
+
+    // $("textarea[name='address']").val();
+    // $("form button").remove();
+    // $('#id').hide();
+    // $("input").hide();
+    e.preventDefault();
+});
+
+
 
 });

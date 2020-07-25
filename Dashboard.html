@@ -11,10 +11,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> <!--for chart-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<!-- <style>
-    div{
-        border:1px solid black;
-    } -->
+<style>
+    input,textarea{
+        display: none;
+    }
 </style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
@@ -55,6 +55,7 @@
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12  col-md-2" style="border-right: 1px solid coral">
+            <form id="form-1 mb-3 mb-md-0">
                 <h3 class="font-weight-light text-danger">
                     User Profile <i class='fas fa-user ml-1' style='font-size:24px'></i>
                 </h3>
@@ -62,32 +63,38 @@
                 <h4 class="text-muted font-weight-light mt-3 mt-md-1">
                     Name
                 </h4>
-                <p class="font-weight-light">Shahzad
+                <input class= "mt-1" type="text " name="namee" autofocus>
+                <p class="font-weight-light" id="namee">Shahzad
                 </p>
-                <h4  class="text-muted font-weight-light">
+                <h4  class="text-muted font-weight-light mt-3">
                     Phone Number
                 </h4>
-                <p class="font-weight-light">
+                <input class= "mt-1" name="number">
+                <p class="font-weight-light" id="number">
                     0300-7654321
                 </p>
-                <h4  class="text-muted font-weight-light">
+                <h4  class="text-muted font-weight-light mt-3" id="id">
                     ID
                 </h4>
-                <p class="font-weight-light">
+                <p class="font-weight-light" id="idee">
                     012
                 </p>
-                <h4  class="text-muted font-weight-light">
+                <h4  class="text-muted font-weight-light mt-3">
                     City
                 </h4>
-                <p class="font-weight-light">Islamabad
-
-                </p>
-                <h4  class="text-muted font-weight-light">
+                <input class= "mt-1" type="text" name="city">
+                <p class="font-weight-light"  id="city">Islamabad </p>
+                
+                <h4  class="text-muted font-weight-light mt-3">
                     Address
                 </h4>
-                <p class="font-weight-light">
+                <textarea class= "mt-1 w-100" type="text" name="address"></textarea>
+                <p class="font-weight-light"  id="address">
                     H#125 Main Road Islamabad.
                 </p>
+                <hr>
+            </form>
+               <p class="text-info" id="para1"><button class="btn text-info">Click to edit user details</button></p>
             </div>
             <div class="col-12 col-md-9 mt-2 mt-md-0 bg-light ml-md-5">
                 <h3 class="text-info font-weight-light mt-4 mt-md-1">
@@ -122,6 +129,7 @@
                 <br>
                 <hr>
             </div>
+            
 
         </div>
         
@@ -142,7 +150,6 @@
                 
             </div>
     </div>
-
 <script src = "DashboardJavaScript.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
