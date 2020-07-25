@@ -1,5 +1,4 @@
-const username = /^[a-z]{5,15}$/i;
-const Reguserid = /^[0-9]{5}$/;
+const username = /^[a-z\s]{5,15}$/i;
 const Regnumber = /^[0-9\s+-]{4,20}$/;
 
 
@@ -194,6 +193,18 @@ $("form").submit(function(e){
     
     else{
 
+
+        swal({
+            
+            title:"Edited",   
+            text:"Your Information has been edited successfully.",
+            icon:"success",
+            type: "error",
+            confirmButtonText: "Ok"
+            })
+        
+
+
     $("input, textarea").hide();
 
     $("form #namee").text(nam);
@@ -201,11 +212,10 @@ $("form").submit(function(e){
     $("form #city").text(city);
     $("form #address").text(address);
 
+    $("form button").remove();
     $("form p, #id").show();
     $("#para1").show();
     
-    // $("form button").remove();
-    // $("#para1").show();
 
     e.preventDefault();
 
@@ -213,11 +223,7 @@ $("form").submit(function(e){
 
     }
 
-    // $("textarea[name='address']").val();
-    // $("form button").remove();
-    // $('#id').hide();
-    // $("input").hide();
-    e.preventDefault();
+
 });
 
 

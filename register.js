@@ -1,4 +1,4 @@
-const Regusername = /^[a-z]{5,15}$/i;
+const Regusername = /^[a-z\s]{5,15}$/i;
 const passwordReg = /^[0-9a-z@-]{6,15}$/i; //alpha numeric character alog with some special character.
 const Reguserid = /^[0-9]{5}$/;
 
