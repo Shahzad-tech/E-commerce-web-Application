@@ -1,3 +1,7 @@
+<?php
+include_once("./conn.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <?php
+    if (session_status() == PHP_SESSION_NONE || !isset($_SESSION) || !isset($_SESSION['user_id'])) {
+        echo '<script>
+        $(document).ready(function () {
+            $("#dashboard").attr("style", "display:none");
+            $("#myorder").attr("style", "display:none");
+            $("#logout").attr("style", "display:none");
+        });
+        </script>';
+    }
+    if (isset($_SESSION['user_id'])) {
+        echo '<script>
+        $(document).ready(function () {
+            $("#register").attr("style", "display:none");
+            $("#login").attr("style", "display:none");
+        });
+        </script>';
+    }
+    ?>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
@@ -19,27 +42,27 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav offset-4">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home
+            <a class="nav-link" href="index.php">Home
                 </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Dashboard.html">Dashboard</a>
+          <li id="dashboard" class="nav-item">
+            <a class="nav-link" href="Dashboard.php">Dashboard</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="myorder.html">Myorder
+          <li id="myorder" class="nav-item">
+            <a class="nav-link" href="myorder.php">Myorder
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="register.html">Register</a>
+          <li id="register" class="nav-item">
+            <a class="nav-link" href="register.php">Register</a>
+          </li>
+          <li id="login" class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link active" href="contactus.php">Contact us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="contactus.html">Contact us</a>
+          <li id="logout" class="nav-item">
+            <a class="nav-link" href="destroy_session.php">Logout</a>
           </li>
         </ul>
       </div>

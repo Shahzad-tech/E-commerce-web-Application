@@ -86,8 +86,4 @@ $(document).click(function(event) {
 
 });
 
-$("#placeOrder").click(function(){
-    
-    swal("Order Delivered", "Our man will reach you in a while \n Shop Again!");
 
-});
